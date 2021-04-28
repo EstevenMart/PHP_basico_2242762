@@ -46,3 +46,43 @@ Route::get('arreglos', function () {
     echo "</pre>";
 
 });
+
+Route::get('paises', function () {
+    //
+    //Fuertemente Tipados: Debe definir el tipo de dato
+    //                     No se puede cambiar el tipo de dato
+    //                     JAVA, .NET, GO
+    //
+    //Debilmente Tipados: No se requiere definir el tipo de dato
+    //                    Puede cambiar el tipo de dato
+    //                    PHP, JAVASCRIPT, PYTHON
+
+    $paises= [ "Colombia" => [
+                                "Capital" => "Bogota",
+                                "Moneda" => "Peso",
+                                "Poblacion" => 51
+                             ] ,
+               "Peru" =>[
+                          "Capital" => "Lima",
+                          "Moneda" => "Soles",
+                          "Poblacion" => 32.8
+                       ],
+               "Paraguay" =>[
+                               "Capital" => "Asunción",
+                               "Moneda" => "Guarani",
+                               "Poblacion" => 7.3
+
+                            ]
+            ];
+            $suma=0;
+            foreach($paises as  $nombre => $pais){
+
+                $suma += $pais["Poblacion"];
+
+                echo " La suma de los paises es $suma";
+
+            }
+
+
+
+});
