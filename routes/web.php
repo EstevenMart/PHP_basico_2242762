@@ -74,15 +74,15 @@ Route::get('paises', function () {
 
                             ]
             ];
-            $suma=0;
-            foreach($paises as  $nombre => $pais){
 
-                $suma += $pais["Poblacion"];
+                //llamar a vista con datos de paises
+                //alias: nombre con el cual
+                //       se reconocen los datos de la vista
 
-                echo " La suma de los paises es $suma";
-
-            }
-
-
+                return view('paises')->with("naciones" , $paises);
 
 });
+
+Route::get('formulario_buscador', "MetabuscadorController@formulario_buscador" );
+
+Route::post('buscar', "MetabuscadorController@buscar");
